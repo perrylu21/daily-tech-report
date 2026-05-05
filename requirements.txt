@@ -1,0 +1,4 @@
+anthropic>=0.30.0
+yfinance>=0.2.40
+feedparser>=6.0.11
+requests>=2.31.0
