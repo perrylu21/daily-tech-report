@@ -1,0 +1,43 @@
+name: Daily Tech & Semiconductor Report
+
+on:
+  schedule:
+    # 每天台灣時間 08:30（UTC 00:30）
+    - cron: "30 0 * * 1-5"   # 週一到週五
+    # 如需每天包含週末，改為：
+    # - cron: "30 0 * * *"
+  workflow_dispatch:          # 允許手動觸發
+
+jobs:
+  send-report:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Cache pip
+        uses: actions/cache@v4
+        with:
+          path: ~/.cache/pip
+          key: ${{ runner.os }}-pip-${{ hashFiles('requirements.txt') }}
+
+      - name: Install dependencies
+        run: pip install -r requirements.txt
+
+      - name: Run report generator
+        env:
+          ANTHROPIC_API_KEY:   ${{ secrets.ANTHROPIC_API_KEY }}
+          GMAIL_USER:          ${{ secrets.GMAIL_USER }}
+          GMAIL_APP_PASSWORD:  ${{ secrets.GMAIL_APP_PASSWORD }}
+        run: python src/generate_report.py
+
+      - name: Notify on failure
+        if: failure()
+        run: echo "Report generation failed — check logs above"
