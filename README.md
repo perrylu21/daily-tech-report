@@ -1,16 +1,17 @@
-# 每日科技半導體簡報 | Daily Tech & Semiconductor Report
+# 半導體 & AI 科技供應鏈日報 | Daily Tech Supply Chain Report
 
-每天自動抓取 TSMC、NVIDIA、AMD、Broadcom、Amazon、Google、Meta 最新資訊，
-透過 Claude AI 整理成繁體中文簡報，寄送到指定 Gmail 信箱。
+每天自動抓取 19 家半導體與科技公司最新資訊，依供應鏈三層架構分類，
+透過 Claude AI 整理成繁體中文簡報（含每日三大重點），寄送到指定 Gmail 信箱。
 
 ---
 
-## 覆蓋範圍
+## 覆蓋範圍（供應鏈三層架構）
 
-| 類別 | 公司 |
-|------|------|
-| 半導體 | TSMC (TSM)、NVIDIA (NVDA)、AMD、Broadcom (AVGO) |
-| 雲端 / 超大規模 | Amazon / AWS (AMZN)、Google / Alphabet (GOOGL)、Meta (META) |
+| 層級 | 類別 | 公司 |
+|------|------|------|
+| 🔬 上游 | 半導體設備 | ASML、Applied Materials (AMAT)、Lam Research (LRCX)、KLA (KLAC)、Tokyo Electron (8035.T) |
+| 💡 中游 | 晶片設計製造 | TSMC (TSM)、Samsung (005930.KS)、SK Hynix (000660.KS)、Micron (MU)、Intel (INTC)、NVIDIA (NVDA)、AMD、Broadcom (AVGO)、MediaTek (2454.TW)、Marvell (MRVL) |
+| ☁️ 下游 | 雲端超大規模 | Amazon/AWS (AMZN)、Microsoft (MSFT)、Meta (META)、Alphabet (GOOGL) |
 
 ---
 
